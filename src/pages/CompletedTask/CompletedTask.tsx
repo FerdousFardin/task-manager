@@ -1,9 +1,10 @@
 import { Stack } from "@mui/material";
 import React from "react";
 import Task from "../../components/Task";
-import { tasks } from "../../data/data";
+// import { fetchTasks, Tasks } from "../../data/data";
 
 const CompletedTask = () => {
+  // const;
   return (
     <div>
       <h1>Completed Tasks</h1>

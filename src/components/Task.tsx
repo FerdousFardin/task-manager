@@ -1,19 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Paper, Stack, styled } from "@mui/material";
-import { Tasks } from "../data/data";
 import Comment from "./Comment";
 
-interface TaskItemProps {
-  task: Tasks;
-  path: string;
-  handlers?: {
-    handleFinish: Function;
-    handleDelete: Function;
-  };
-}
-
-const Task: React.FC<TaskItemProps> = ({ task, path, handlers }) => {
+const Task: React.FC = ({ task, path, handlers }) => {
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
     ...theme.typography.body2,
