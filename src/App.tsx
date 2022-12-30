@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { Test } from "./components/Test";
 import AddTask from "./pages/AddTask/AddTask";
 import CompletedTask from "./pages/CompletedTask/CompletedTask";
 import { Login } from "./pages/Login/Login";

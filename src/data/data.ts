@@ -1,4 +1,4 @@
-// import { url } from "../utility/url";
+import { url } from "../utility/url";
 
 export interface Tasks {
   _id?: string;
@@ -9,11 +9,11 @@ export interface Tasks {
   img?: string;
 }
 
-// export async function fetchTasks(): Promise<Tasks[]> {
-//   try {
-//     const response = await fetch(`${url}/tasks`);
-//     const data = await response.json();
-//     return data;
-//   } finally {
-//   }
-// }
+export async function fetchTasks(): Promise<Tasks[]> {
+  try {
+    const response = await fetch(`${url}/tasks`);
+    const data = await response.json();
+    return data;
+  } finally {
+  }
+}

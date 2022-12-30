@@ -1,18 +1,29 @@
-import { Stack } from "@mui/material";
-import React from "react";
+import { Grid } from "@mui/material";
+import { useEffect, useState } from "react";
+import Loading from "../../components/Loading";
 import Task from "../../components/Task";
-// import { fetchTasks, Tasks } from "../../data/data";
+import { fetchTasks, Tasks } from "../../data/data";
 
 const CompletedTask = () => {
-  // const;
+  const [tasks, setTasks] = useState<Tasks[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    fetchTasks().then((data) => {
+      setTasks(data);
+      setLoading(false);
+    });
+  }, []);
+  if (loading) return <Loading />;
   return (
     <div>
       <h1>Completed Tasks</h1>
-      <Stack spacing={4}>
-        {tasks.map((task, idx) => (
+      <Grid container justifyContent="center" spacing={3}>
+        {tasks?.map((task: Tasks, idx) => (
           <Task {...{ task, path: "completed-task" }} key={idx} />
         ))}
-      </Stack>
+      </Grid>
     </div>
   );
 };
